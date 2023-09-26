@@ -14,7 +14,7 @@ books = content.get("books", [])
 years = []
 
 for book in books:
-    if year := book["year_published"]:
+    if year := book.get("year_published"):
         years.append(year)
 
 # Výpočet průměrného roku vydání
