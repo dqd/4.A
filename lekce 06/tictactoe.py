@@ -14,22 +14,42 @@ class Board:
     ROWS = 3
 
     def __init__(self):
-        pass
+        self._layout = []
+
+        for _ in range(Board.ROWS):
+            # [" "] * 3 vytvoří [" ", " ", " "]
+            self._layout.append([Player.EMPTY] * Board.ROWS)
 
     def display(self):
-        pass
+        first = True
+
+        for row in self._layout:
+            # horizontální čáru vypisujeme pouze mimo první iteraci
+            if first:
+                first = False
+            else:
+                # 2 znaky mezery + 1 znak hodnota + 1 znak vertikální čára
+                print("-" * (Board.ROWS * 4 - 1))
+
+            print("|".join([" {} ".format(cell.value) for cell in row]))
 
     def get_cell(self, row, col):
-        pass
+        return self._layout[row][col]
 
     def set_cell(self, row, col, value):
-        pass
+        self._layout[row][col] = value
 
     def is_winner(self, player):
         pass
 
     def is_draw(self):
         pass
+
+
+board = Board()
+board.set_cell(0, 0, Player.NOUGHT)
+board.set_cell(0, 1, Player.CROSS)
+board.display()
 
 
 class Score(Enum):
@@ -68,5 +88,5 @@ class TicTacToe:
         pass
 
 
-game = TicTacToe()
-game.play()
+# game = TicTacToe()
+# game.play()
