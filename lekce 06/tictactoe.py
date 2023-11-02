@@ -55,6 +55,8 @@ class Board:
         if all(diag1) or all(diag2):
             return True
 
+        return False
+
     def is_finished(self):
         for row in self._layout:
             for cell in row:
