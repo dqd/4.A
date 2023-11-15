@@ -33,8 +33,10 @@ with path.open("r", newline="") as f:
         products[row[1]]["price"] += quantity * price
 
 for product in products.values():
-    print("{}: {} pcs, {:.2f} €".format(
-        product["name"],
-        product["quantity"],
-        product["price"],
-    ))
+    print(
+        "{}: {} pcs, {:.2f} €".format(
+            product["name"],
+            product["quantity"],
+            product["price"],
+        )
+    )

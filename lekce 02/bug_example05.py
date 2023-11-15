@@ -1,5 +1,6 @@
 # Nalezení prvku v seznamu a vrácení pozice, na které se nachází.
 
+
 def find_index(lst, value):
     index = 0
 
@@ -8,11 +9,13 @@ def find_index(lst, value):
 
     return index
 
+
 # Problémy:
 # - neošetřený případ, kdy se prvek `value` nenachází v seznamu `lst`
 # - ruční iterace seznamu namísto využití zabudovaných metod
 
 # Doporučené řešení:
+
 
 def find_index(lst, value):
     if value in lst:
@@ -20,7 +23,9 @@ def find_index(lst, value):
 
     return None
 
+
 # Alternativní řešení s použitím odchycení výjimky:
+
 
 def find_index(lst, value):
     try:

@@ -1,9 +1,11 @@
 # Otevření a načtení souboru.
 
+
 def read_file(filename):
     f = open(filename, "r")
     data = f.read()
     return data
+
 
 # Problém:
 # - zapomenuté uzavření souboru pomocí `f.close()`, které může vést k různým nechtěným jevům:
@@ -12,6 +14,7 @@ def read_file(filename):
 #   - potenciální ztráta dat
 
 # Doporučené řešení za pomocí konstrukce with, která soubor automaticky uzavře:
+
 
 def read_file(filename):
     with open(filename, "r") as f:

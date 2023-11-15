@@ -1,5 +1,6 @@
 # Funkce pro převod CamelCase na snake_case a naopak.
 
+
 def camel_to_snake(s):
     if not s:
         return s
@@ -17,4 +18,3 @@ def camel_to_snake(s):
 
 def snake_to_camel(s):
     return "".join([x.capitalize() for x in s.split("_")])
-
