@@ -22,3 +22,4 @@ services:
       - ./myproject:/code/myproject
     command: python ./manage.py runserver 0:8000
     restart: unless-stopped
+
