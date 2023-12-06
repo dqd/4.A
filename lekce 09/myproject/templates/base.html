@@ -11,15 +11,18 @@
             <ul>
                 <li><a href="{% url "index" %}">Titulní strana</a></li>
                 {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li><a href="{% url "admin:index" %}">Administrace</a></li>
+                    {% endif %}
                     <li><a href="{% url "password_change" %}">Změna hesla</a></li>
                     <li>
                         <form method="post" action="{% url "logout" %}">
                             {% csrf_token %}
                             <input type="submit" value="Odhlásit" id="logout">
-                            <input type="hidden" name="next" value="{% url "index" %}">
                         </form>
                     </li>
                 {% else %}
+                    <li><a href="{% url "registration" %}">Registrace</a></li>
                     <li><a href="{% url "login" %}">Přihlášení</a></li>
                 {% endif %}
             </ul>
