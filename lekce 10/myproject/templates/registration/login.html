@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{% block title %}Přihlášení{% endblock %}</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Přihlásit se">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+{% endblock %}
