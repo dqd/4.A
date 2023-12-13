@@ -27,6 +27,6 @@ class ViewTestCase(TestCase):
             },
         )
 
-        self.assertIsNotNone(User.objects.filter(username=username).first())
+        self.assertTrue(User.objects.filter(username=username).exists())
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("login"))
