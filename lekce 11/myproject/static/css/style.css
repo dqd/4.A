@@ -58,3 +58,16 @@ nav ul>li>a {
 #logout:hover {
     cursor: pointer;
 }
+
+.messages ul {
+    padding: 0;
+}
+
+.messages li {
+    display: block;
+    padding: 10px;
+}
+
+.messages li.info {
+    background-color: aquamarine;
+}
