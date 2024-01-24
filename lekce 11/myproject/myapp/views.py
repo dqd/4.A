@@ -3,10 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
+from .models import MyModel
 from .forms import MyModelForm
 
 def index(request):
-    return render(request, "index.html")
+    my_models = MyModel.objects.filter(user_id=request.user.id)
+    return render(request, "index.html", {"my_models": my_models})
+
 
 def registration(request):
     if request.method == "POST":
